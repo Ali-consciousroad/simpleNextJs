@@ -2,24 +2,16 @@
 <html>
     <body>
         <div id="app"></div>
+        <!-- Core React library -->
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <!-- DOM-specific methods for React -->
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <!-- Babel Script -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <!-- Add script tag to write JS inside an html file -->
-        <script type="text/javascript">
-            // Get the div element by its id 
+        <script type="text/jsx">
             const app = document.getElementById('app');
-
-            // Create a new H1 element 
-            const header = document.createElement('h1');
-
-            // Create a new text node for the H1 element
-            const headerContent = document.createTextNode(
-                "Develop. Preview. Ship. ",  
-            );
-
-            // Append the text to the H1 element
-            header.appendChild(headerContent);
-
-            // Place the H1 element inside the div
-            app.appendChild(header);
+            ReactDOM.render(<h1>Develop. Preview. Ship. </h1>, app);
         </script>
     </body>
 </html>
