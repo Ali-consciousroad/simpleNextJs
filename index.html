@@ -12,20 +12,24 @@
         <script type="text/jsx">
             const app = document.getElementById("app");
 
-            function Header() {
-                return (<h1>Develop. Preview. Ship. </h1>)
+            // Use object destructuring on the "props" object 
+            // Use a ternary operator (regular JS) inside JSX using {}
+            function Header({ title }) { 
+                return <h1>{title ? title : 'Default title'}</h1>;
             }
 
-            function HomePage() {
+             function HomePage() {
                 return (
                     <div>
                         {/* Nesting the Header component */}
-                        <Header />
+                        {/* Pass custom props as we would pass attributes */}
+                        <Header title="React" />
+                        <Header title="A new title" />
                     </div>
                 );
-            }
+             }
 
-            ReactDOM.render(<Header/>, app);
+            ReactDOM.render(<HomePage/>, app)
         </script>
     </body>
 </html>
