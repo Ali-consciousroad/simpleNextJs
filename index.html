@@ -19,10 +19,13 @@
             }
 
              function HomePage() {
+                // Access value using array destructuring and use 0 as initial of our likes state
+                const [likes, setLikes] = React.useState(0);
                 const names = ['Harry Potter', 'Ron Weysley', 'Hermione Granger'];
 
                 function handleClick() {
                     console.log("increment like count")
+                    setLikes(likes + 1);
                 }
 
                 return (
@@ -38,7 +41,7 @@
                             ))}
                         </ul>
 
-                        <button onClick={handleClick}>Like</button>
+                        <button onClick={handleClick}>Like({likes})</button>
                     </div>
                 );
              }
