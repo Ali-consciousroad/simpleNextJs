@@ -19,15 +19,30 @@
             }
 
              function HomePage() {
+                const names = ['Harry Potter', 'Ron Weysley', 'Hermione Granger'];
+
+                function handleClick() {
+                    console.log("increment like count")
+                }
+
                 return (
                     <div>
                         {/* Nesting the Header component */}
                         {/* Pass custom props as we would pass attributes */}
                         <Header title="React" />
                         <Header title="A new title" />
+                        <ul>
+                            {/*Map over the name*/}
+                            {names.map((name) => (
+                                <li key={name}>{name}</li>
+                            ))}
+                        </ul>
+
+                        <button onClick={handleClick}>Like</button>
                     </div>
                 );
              }
+
 
             ReactDOM.render(<HomePage/>, app)
         </script>
